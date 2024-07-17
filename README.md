@@ -57,9 +57,10 @@ Using the variable `g:ansible_vault_password_file` enables you to change it
 from within vim, using keybinding or autogroup to switch between multiple
 password files.
 
-Password files are in plaintext, I have plans to add a support to use commands
-to retrieve a password (eg. using pass or gopass), let me know if you are
-interested.
+Password files are in plaintext, and can optionally be configured by specifying
+a path to them in `$ANSIBLE_VAULT_PASSWORD_FILE`. Note that the password file
+may also be an executable program or script which emits the (newline-terminated)
+password to _stdout_ (this is an Ansible feature).
 
 In the yaml file, place the cursor on a `key: value` yaml pair then execute
 the command `:AnsibleVault`. The encrypted value will replace the unencrypted
